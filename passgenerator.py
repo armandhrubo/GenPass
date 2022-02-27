@@ -1,12 +1,11 @@
 import random
 import string
-import tkinter
-import array
+from tkinter import *
 
 def generate_password():
 
     count = 0
-    while count < 4:
+    while count < 1:
 
         max_length = 14
         lowercase = list(string.ascii_lowercase)
@@ -32,11 +31,26 @@ def generate_password():
                 passwords.append(temp)"""
 
         random.shuffle(passwords)
-
         count += 1
-        print("".join(passwords))
+        final_output = "".join(passwords)
+        lbl.config(text=final_output)
+        print(final_output)
 
-generate_password()
+
+window = Tk()
+window.title("DIY Password Generator")
+window.geometry('384x288')
+window.resizable(False, False)
+
+lbl = Label(window, text='Generate a 14-Character Password')
+lbl.pack(side="top", fill="both", expand="yes")
+
+
+button = Button(window, text='Generate', command=generate_password)
+button.place(x=165, y=170)
+window.mainloop()
+
+
 
 """ KNOWN ISSUES and TO DO LIST:
 
