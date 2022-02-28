@@ -37,6 +37,7 @@ def generate_password():
         print(final_output)
 
 
+
 window = Tk()
 window.title("DIY Password Generator")
 window.geometry('384x288')
@@ -48,6 +49,8 @@ lbl.pack(side="top", fill="both", expand="yes")
 
 button = Button(window, text='Generate', command=generate_password)
 button.place(x=165, y=170)
+
+
 window.mainloop()
 
 
